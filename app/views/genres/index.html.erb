@@ -1,0 +1,34 @@
+<h1>Listing genres</h1>
+
+<table>
+  <thead>
+    
+      
+     <!-- <th>Description</th> //-->
+      
+  </thead>
+
+  <tbody>
+    <% @genres.each do |genre| %>
+      <h2><%= link_to genre.name, genre %></h2>
+
+       <!-- <td><%= genre.description %></td>
+      <td><%= link_to 'Show', genre %></td>
+        <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
+        <td><%= link_to 'Destroy', genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        //-->
+      
+      <% @games.each do |game|  %>
+      <% if genre == game.genre %>
+        
+      
+      <ul><h3>  <%= link_to game.name, game %></h3></ul>
+      <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Genre', new_genre_path %>
